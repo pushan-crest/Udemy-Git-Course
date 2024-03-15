@@ -1,0 +1,176 @@
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Do
+gigit clone https://github.com/Colt/git-diff-exercise
+Cloning into 'git-diff-exercise'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 15 (delta 1), reused 15 (delta 1), pack-reused 0
+Receiving objects: 100% (15/15), done.
+Resolving deltas: 100% (1/1), done.
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4
+$ ls
+git-diff-exercise/
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4
+$ cd git-diff-exercise/
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git branch
+* current
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git switch 1970s
+Switched to a new branch '1970s'
+branch '1970s' set up to track 'origin/1970s'.
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (1970s)
+$ git branch
+* 1970s
+  current
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (1970s)
+$ ls
+fleetwoodmac.txt  queen.txt
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (1970s)
+$ git diff 1970s..current
+diff --git a/fleetwoodmac.txt b/fleetwoodmac.txt
+index 6f44367..653b184 100644
+--- a/fleetwoodmac.txt
++++ b/fleetwoodmac.txt
+@@ -1,5 +1,5 @@
+-Lead Vocals: Jeremy Spencer
+-Lead Guitar: Lindsey Buckingham
++Lead Vocals: Stevie Nicks
++Lead Guitar: Mike Campbell
+ Bass: John McVie
+ Drums: Mick Fleetwood
+-Keyboard: None
+\ No newline at end of file
++Keyboard: Christine McVie
+\ No newline at end of file
+diff --git a/queen.txt b/queen.txt
+index 2ab2d04..0e0fa0d 100644
+--- a/queen.txt
++++ b/queen.txt
+@@ -1,4 +1,4 @@
+-Lead Vocals: Freddie Mercury
++Lead Vocals: Adam Lambert
+ Lead Guitar: Brian May
+-Bass: Mike Grose
++Bass: Neil Fairclough
+ Drums: Roger Taylor
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (1970s)
+$ git diff 1970s..current -- queen.txt
+diff --git a/queen.txt b/queen.txt
+index 2ab2d04..0e0fa0d 100644
+--- a/queen.txt
++++ b/queen.txt
+@@ -1,4 +1,4 @@
+-Lead Vocals: Freddie Mercury
++Lead Vocals: Adam Lambert
+ Lead Guitar: Brian May
+-Bass: Mike Grose
++Bass: Neil Fairclough
+ Drums: Roger Taylor
+\ No newline at end of file
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git diff HEAD^
+diff --git a/queen.txt b/queen.txt
+index f7f4a33..0e0fa0d 100644
+--- a/queen.txt
++++ b/queen.txt
+@@ -1,4 +1,4 @@
+ Lead Vocals: Adam Lambert
+ Lead Guitar: Brian May
+-Bass: John Deacon
++Bass: Neil Fairclough
+ Drums: Roger Taylor
+\ No newline at end of file
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ nano queen.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ nano fleetwoodmac.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git add queen.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git diff
+diff --git a/fleetwoodmac.txt b/fleetwoodmac.txt
+index 653b184..9dae995 100644
+--- a/fleetwoodmac.txt
++++ b/fleetwoodmac.txt
+@@ -1,5 +1,5 @@
+-Lead Vocals: Stevie Nicks
++Lead Vocals: Stevie Chicks
+ Lead Guitar: Mike Campbell
+ Bass: John McVie
+ Drums: Mick Fleetwood
+-Keyboard: Christine McVie
+\ No newline at end of file
++Keyboard: Christine McVie
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git diff --staged
+diff --git a/queen.txt b/queen.txt
+index 0e0fa0d..1b9beed 100644
+--- a/queen.txt
++++ b/queen.txt
+@@ -1,4 +1,4 @@
+-Lead Vocals: Adam Lambert
++Lead Vocals: Pushan Alagiya
+ Lead Guitar: Brian May
+ Bass: Neil Fairclough
+-Drums: Roger Taylor
+\ No newline at end of file
++Drums: Roger Taylor
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 4/git-diff-exercise (current)
+$ git diff HEAD^ && git diff --staged
+diff --git a/fleetwoodmac.txt b/fleetwoodmac.txt
+index 653b184..9dae995 100644
+--- a/fleetwoodmac.txt
++++ b/fleetwoodmac.txt
+@@ -1,5 +1,5 @@
+-Lead Vocals: Stevie Nicks
++Lead Vocals: Stevie Chicks
+ Lead Guitar: Mike Campbell
+ Bass: John McVie
+ Drums: Mick Fleetwood
+-Keyboard: Christine McVie
+\ No newline at end of file
++Keyboard: Christine McVie
+diff --git a/queen.txt b/queen.txt
+index f7f4a33..1b9beed 100644
+--- a/queen.txt
++++ b/queen.txt
+@@ -1,4 +1,4 @@
+-Lead Vocals: Adam Lambert
++Lead Vocals: Pushan Alagiya
+ Lead Guitar: Brian May
+-Bass: John Deacon
+-Drums: Roger Taylor
+\ No newline at end of file
++Bass: Neil Fairclough
++Drums: Roger Taylor

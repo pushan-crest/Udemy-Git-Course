@@ -1,0 +1,160 @@
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC
+$ git clone https://github.com/Colt/yesterday-exercise
+Cloning into 'yesterday-exercise'...
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 24 (delta 7), reused 24 (delta 7), pack-reused 0
+Receiving objects: 100% (24/24), done.
+Resolving deltas: 100% (7/7), done.
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6
+$ ls
+yesterday-exercise/
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6
+$ cd yesterday-exercise/
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ ls
+lyrics.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ git log --oneline
+f199959 (HEAD -> master, origin/master, origin/HEAD) rework final verse
+8e3111c rework chorus
+b88b254 rework second verse
+b593444 rework first verse
+cdd927c finish original lyrics
+9518e20 add original chorus
+9858f43 add original second verse
+485a339 add original first verse
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ git checkout 8e3111c
+Note: switching to '8e3111c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 8e3111c rework chorus
+
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise ((8e3111c...))
+$ git switch master
+Previous HEAD position was 8e3111c rework chorus
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise ((485a339...))
+$ git checkout cdd927c
+Previous HEAD position was 485a339 add original first verse
+HEAD is now at cdd927c finish original lyrics
+
+
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise ((cdd927c...))
+$ git branch scrambled-eggs
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise ((cdd927c...))
+$ git branch
+* (HEAD detached at cdd927c)
+  master
+  scrambled-eggs
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise ((cdd927c...))
+$ git switch master
+Previous HEAD position was cdd927c finish original lyrics
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ nano lyrics.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   lyrics.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ git restore lyrics.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ cat lyrics.txt
+Yesterday
+All my troubles seemed so far away
+Now it looks as though they're here to stay
+Oh, I believe in yesterday
+
+Suddenly
+I'm not half the man I used to be
+There's a shadow hanging over me
+Oh, yesterday came suddenly
+
+Why she had to go
+I don't know, she wouldn't say
+I said something wrong
+Now I long for yesterday
+
+Yesterday
+Love was such an easy game to play
+Now I need a place to hide away
+Oh, I believe in yesterday
+
+
+
+
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ nano lyrics.txt
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ cat lyrics.txt
+404
+Guess this ain't the page you're looking for
+On this website there are thousands more
+With no error 404
+
+Suddenly
+This is not the page you thought you'd see
+But it's not an error 403
+Yes, 404s come easily
+
+PushanAlagiya@DESKTOP-P5ASG10 MINGW64 /d/GC Download/Courses/Git/Course Upload/Code/Exercise 6/yesterday-exercise (master)
+$ git commit -a -m "changing lyrics"
+[master 2a664f1] changing lyrics
+ 1 file changed, 7 insertions(+), 17 deletions(-)
+
+
+
+
+
+
